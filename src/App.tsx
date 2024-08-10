@@ -1,5 +1,6 @@
 import './App.css'
 import googleAPI from "../src/services/googleAPI"
+import Navigation from './components/Navbar'
 const googleAPIkey = 'AIzaSyBFjjrOVcDKM0B5OFIWLhtbHc52Ai27pIs'
 const BASE_URL = `https://maps.googleapis.com/maps/api/js?key=${googleAPIkey}`
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <script async
       src={`https://maps.googleapis.com/maps/api/js?key=${BASE_URL}`}>
   </script>
+  <Navigation/>
     <h3>Home</h3>
     </>
   )
