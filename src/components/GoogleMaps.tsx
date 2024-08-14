@@ -17,11 +17,14 @@ interface MapProps {
 
 const GoogleMaps: React.FC<MapProps> = ({ apiKey }) => {
   return (
-    <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-        <Marker position={center} />
-      </GoogleMap>
-    </LoadScript>
+    <div className='map'>
+      <LoadScript googleMapsApiKey={apiKey}>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+          <Marker position={center} />
+        </GoogleMap>
+      </LoadScript>
+    </div>
+    
   );
 };
 

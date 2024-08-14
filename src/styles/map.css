@@ -1,0 +1,10 @@
+.map {
+    width: 400px;
+    height: 400px;
+    position: fixed !important;
+    bottom: 0;
+    right: 0;
+    zIndex: 1000;
+    border: 2px solid black;
+    backgroundColor: white;
+  };
