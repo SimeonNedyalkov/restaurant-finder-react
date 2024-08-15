@@ -7,7 +7,7 @@ export default function Home(){
             <p>Discover delicious experiences tailored just for you.</p>
             <form className="search-bar">
                 <input type="text" placeholder="Enter your location or cuisine..."/>
-                <button type="submit">Search Now</button>
+                <button className="bg-red-400" type="submit">Search Now</button>
             </form>
         </div>
     </header>
