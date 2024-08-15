@@ -5,6 +5,7 @@ const googleAPIkey = 'AIzaSyBFjjrOVcDKM0B5OFIWLhtbHc52Ai27pIs'
 const BASE_URL = `https://maps.googleapis.com/maps/api/js?key=${googleAPIkey}`
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import About from "./components/About"
+import Footer from "./components/Footer"
 function App() {
   return (
     <>
@@ -13,7 +14,7 @@ function App() {
       <Route path="/about" element={<About/>}/>
       <Route path="/restaurant-finder" element={<GoogleMaps apiKey={googleAPIkey}/>}></Route>
     </Routes>
-    
+    <Footer/>
     </>
   )
 }
