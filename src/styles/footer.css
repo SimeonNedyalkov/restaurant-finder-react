@@ -1,4 +1,13 @@
-.footerContainer{
+.footerContainer {
     position: fixed;
     bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 4px solid #ff6f61;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
 }
