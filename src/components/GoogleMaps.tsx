@@ -7,8 +7,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 43.214112818100986, 
+  lng: 27.9153116244472,
 };
 
 interface MapProps {
