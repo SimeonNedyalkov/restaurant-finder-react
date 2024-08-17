@@ -7,6 +7,7 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import About from "./components/About"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
+import RestaurantFinder from "./components/RestaurantFinder"
 function App() {
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
-      <Route path="/restaurant-finder" element={<GoogleMaps apiKey={googleAPIkey}/>}></Route>
+      <Route path="/restaurant-finder" element={<RestaurantFinder apiKey={googleAPIkey}/>}></Route>
     </Routes>
     <Footer/>
     </>
