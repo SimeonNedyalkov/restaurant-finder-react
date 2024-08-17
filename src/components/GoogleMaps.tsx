@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
@@ -11,11 +11,7 @@ const center = {
   lng: 27.9153116244472,
 };
 
-interface MapProps {
-  apiKey: string;
-}
-
-const GoogleMaps: React.FC<MapProps> = ({ apiKey }) => {
+const GoogleMaps: React.FC = () => {
   const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
 
   const onLoad = useCallback((map: google.maps.Map) => {
@@ -44,28 +40,26 @@ const GoogleMaps: React.FC<MapProps> = ({ apiKey }) => {
 
   return (
     <div className='map'>
-      <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
-        >
-          {restaurants.map((restaurant, index) => (
-            restaurant.geometry?.location && (
-              <Marker
-                key={index}
-                position={{
-                  lat: restaurant.geometry.location.lat(),
-                  lng: restaurant.geometry.location.lng(),
-                }}
-                title={restaurant.name}
-              />
-            )
-          ))}
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+      >
+        {restaurants.map((restaurant, index) => (
+          restaurant.geometry?.location && (
+            <Marker
+              key={index}
+              position={{
+                lat: restaurant.geometry.location.lat(),
+                lng: restaurant.geometry.location.lng(),
+              }}
+              title={restaurant.name}
+            />
+          )
+        ))}
+      </GoogleMap>
     </div>
   );
 };

@@ -3,10 +3,10 @@ import GoogleMaps from "./GoogleMaps";
 interface MapProps {
     apiKey: string;
   }
-export default function RestaurantFinder({ apiKey }: MapProps) {
+export default function RestaurantFinder() {
     return (
         <div className="restaurantFinderBackground">
-            <GoogleMaps apiKey={apiKey} />
+            <GoogleMaps />
         </div>
     );
 }
