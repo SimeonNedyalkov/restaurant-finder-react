@@ -1,7 +1,7 @@
 export default function Loader(){
     return(
     <>
-    <img src="" alt="" />
+    <img src="../assets/loader/banitsapng.png" alt="" />
     </>
     )
 }

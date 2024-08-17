@@ -14,7 +14,6 @@ const center = {
 interface GoogleMapsProps {
   onRestaurantsUpdate: (restaurants: google.maps.places.PlaceResult[]) => void;
 }
-
 const GoogleMaps: React.FC<GoogleMapsProps> = ({ onRestaurantsUpdate }) => {
   const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
 
