@@ -11,7 +11,11 @@ const center = {
   lng: 27.9153116244472,
 };
 
-const GoogleMaps: React.FC = () => {
+interface GoogleMapsProps {
+  onRestaurantsUpdate: (restaurants: google.maps.places.PlaceResult[]) => void;
+}
+
+const GoogleMaps: React.FC<GoogleMapsProps> = ({ onRestaurantsUpdate }) => {
   const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
 
   const onLoad = useCallback((map: google.maps.Map) => {
@@ -28,11 +32,13 @@ const GoogleMaps: React.FC = () => {
     service.nearbySearch(request, (results, status) => {
       if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
         setRestaurants(results);
+        onRestaurantsUpdate(results); // Call the callback with the new restaurants data
       } else {
         setRestaurants([]);
+        onRestaurantsUpdate([]); // Ensure to update the parent with an empty array in case of no results
       }
     });
-  }, []);
+  }, [onRestaurantsUpdate]);
 
   const onUnmount = useCallback((map: google.maps.Map) => {
     setRestaurants([]);
