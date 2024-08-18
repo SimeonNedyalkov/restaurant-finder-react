@@ -31,10 +31,10 @@ const GoogleMaps: React.FC<GoogleMapsProps> = ({ onRestaurantsUpdate }) => {
     service.nearbySearch(request, (results, status) => {
       if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
         setRestaurants(results);
-        onRestaurantsUpdate(results); // Call the callback with the new restaurants data
+        onRestaurantsUpdate(results);
       } else {
         setRestaurants([]);
-        onRestaurantsUpdate([]); // Ensure to update the parent with an empty array in case of no results
+        onRestaurantsUpdate([]);
       }
     });
   }, [onRestaurantsUpdate]);

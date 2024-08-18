@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GoogleMaps from './GoogleMaps'; // Adjust the path to your GoogleMaps component
+import GoogleMaps from './GoogleMaps';
 import Loader from '../loaders/Loader';
 
 const RestaurantFinder: React.FC = () => {
