@@ -1,16 +1,29 @@
-.loaderImage {
-    width: 100px;
-    height: 100px;
-    background-position: center;
+.loaderBackground{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#feb47b,#ff886b,#f87757)
+}
+
+.loaderImage {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #ff7e5f, #feb47b);
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1;
 }
 
 .loaderImage img {
     width: 100%;
     height: auto;
     animation: spin 2s linear infinite; 
+    z-index: 2;
 }
 
 @keyframes spin {
