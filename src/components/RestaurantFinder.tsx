@@ -75,6 +75,8 @@ const RestaurantFinder: React.FC = () => {
         <Loader />
       ) : (
         <>
+        <div className='restaurantsContainer'>
+        <div className='arrow left' onClick={() => setViewIndex(0)}>&lt;</div>
           <div className='restaurantsList'>
             <h1>{viewIndex === 0 ? 'All Restaurants' : 'Highest Rated Restaurants'}</h1>
             <h2>{viewIndex === 0 ? 'Browse through our complete list of restaurants.' : 'Check out the top-rated dining spots!'}</h2>
@@ -92,7 +94,8 @@ const RestaurantFinder: React.FC = () => {
               ></span>
             </div>
           </div>
-
+          <div className='arrow right' onClick={() => setViewIndex(1)}>&gt;</div>
+          </div>
           <GoogleMaps onRestaurantsUpdate={handleRestaurantsUpdate} />
         </>
       )}
