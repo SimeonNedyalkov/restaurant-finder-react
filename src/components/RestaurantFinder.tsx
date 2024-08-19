@@ -10,6 +10,7 @@ const RestaurantFinder: React.FC = () => {
   const navigation = useNavigate()
 
   console.log(restaurants)
+
   const handleRestaurantsUpdate = (updatedRestaurants: google.maps.places.PlaceResult[]) => {
     setRestaurants(updatedRestaurants);
   };
@@ -18,25 +19,25 @@ const RestaurantFinder: React.FC = () => {
     return [...restaurants].sort((a, b) => (b.rating || 0) - (a.rating || 0));
   };
 
-  function navDetails(id:any){
+  function navDetails(id: any) {
     const simplifiedRestaurants = restaurants.map(restaurant => ({
       id: restaurant.place_id,
       name: restaurant.name,
-      rating:restaurant.rating,
-      vicinity:restaurant.vicinity,
-      types : restaurant.types,
-      price_level : restaurant.price_level,
-      photos : restaurant.photos?.[0].html_attributions || null,
-      user_ratings_total : restaurant.user_ratings_total
+      rating: restaurant.rating,
+      vicinity: restaurant.vicinity,
+      types: restaurant.types,
+      price_level: restaurant.price_level,
+      googleLocation: restaurant.photos?.[0].html_attributions || null,
+      photos:restaurant.photos?.[0]?.getUrl(),
+      user_ratings_total: restaurant.user_ratings_total
     }));
-      navigation(`/restaurant-finder/details/${id}`,{
-        state:{
-          allRestaurants: simplifiedRestaurants 
-        }
-      })
-    
-    
+    navigation(`/restaurant-finder/details/${id}`, {
+      state: {
+        allRestaurants: simplifiedRestaurants
+      }
+    })
   }
+
   const renderRestaurants = () => {
     let displayedRestaurants: google.maps.places.PlaceResult[] = [];
 
@@ -69,12 +70,14 @@ const RestaurantFinder: React.FC = () => {
 
   return (
     <div className='restaurantFinderBackground'>
+      <div className="overlay"></div>
       {isLoading ? (
         <Loader />
       ) : (
         <>
           <div className='restaurantsList'>
             <h1>{viewIndex === 0 ? 'All Restaurants' : 'Highest Rated Restaurants'}</h1>
+            <h2>{viewIndex === 0 ? 'Browse through our complete list of restaurants.' : 'Check out the top-rated dining spots!'}</h2>
             <ul className='restaurantItems'>
               {renderRestaurants()}
             </ul>

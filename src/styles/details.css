@@ -19,18 +19,28 @@
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     max-width: 800px;
+    max-height: 600px;
     width: 100%;
+    height: 600px;
     text-align: center;
     border: 1px solid #e0e0e0;
     font-family: 'Arial', sans-serif;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
 }
 
 .restaurantName {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #212121;
     font-weight: 800;
     letter-spacing: 0.5px;
+    max-height: 200px;
+}
+.restaurantImage{
+    width: 40%;
+    height: 40%;
 }
 
 .restaurantDescription {
@@ -93,4 +103,16 @@
         width: auto;
         display: inline;
     }
+}
+.restaurantItems li {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .restaurantItems li:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+.detailsAndImage{
+    display: flex;
+    flex-direction: row;
 }

@@ -1,6 +1,11 @@
+/* Container and Background */
 .restaurantFinderBackground {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: #ffffff;
+    background: linear-gradient(
+        rgba(44, 62, 80, 0.6), 
+        rgba(76, 161, 175, 0.6)
+    ), url('../assets/restaurant-finder/restaurant-background-sv84h1ctk850whke.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -9,19 +14,22 @@
     flex-direction: column;
 }
 
+/* Restaurant List Container */
 .restaurantsList {
-    position: fixed;
-    left: 20px;
-    top: 60px;
-    background: rgba(34, 34, 34, 0.9);
-    padding: 20px 30px;
+    position: relative;
+    background: rgba(34, 34, 34, 0.8);
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     max-height: 80vh;
     overflow-y: auto;
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px;
+    right:200px;
 }
 
+/* Header */
 .restaurantsList h1 {
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -30,6 +38,7 @@
     font-weight: 600;
 }
 
+/* Restaurant Items */
 .restaurantItems {
     list-style: none;
     padding: 0;
@@ -37,18 +46,21 @@
 }
 
 .restaurantItems li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     font-size: 1.2rem;
-    padding: 8px 0;
-    border-bottom: 1px solid #444;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
 .restaurantItems li:hover {
-    color: #ffcc00;
-    border-color: #ffcc00;
+    background-color: #ffcc00;
+    color: #333;
 }
 
+/* Pagination Dots */
 .paginationDots {
     display: flex;
     justify-content: center;
@@ -56,8 +68,8 @@
 }
 
 .dot {
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -68,9 +80,11 @@
 
 .dot.active {
     background-color: #ffcc00;
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 .dot:hover {
     background-color: #ffcc00;
 }
+
+

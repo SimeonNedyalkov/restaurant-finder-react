@@ -1,4 +1,5 @@
 import { useLocation, useParams } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 export default function Details() {
     const location = useLocation();
@@ -13,15 +14,17 @@ export default function Details() {
         ? `#${currentRestaurant.types.join(', #')}`
         : currentRestaurant.types.split(',');
     
-    const photos = currentRestaurant.photos[0]?.split('"')[1] || '';
+    const googleLocation = currentRestaurant.googleLocation[0]?.split('"')[1] || '';
 
     return (
         <div className="detailsBackground">
             <div className="detailsContainer">
                 <h1 className="restaurantName">{currentRestaurant.name}</h1>
-                <a href={photos} target="_blank" rel="noopener noreferrer" className="restaurantDescription">
-                    {photos ? `Link to Google Maps: ${photos}` : "No photo available."}
+                
+                <a href={googleLocation} target="_blank" rel="noopener noreferrer" className="restaurantDescription">
+                    {googleLocation ? `Link to Google Maps: ${googleLocation}` : "No photo available."}
                 </a>
+                <div className="detailsAndImage">
                 <ul className="restaurantDetails">
                     <li><strong>Address:</strong> {currentRestaurant.vicinity}</li>
                     <li><strong>Types:</strong> {types}</li>
@@ -33,7 +36,11 @@ export default function Details() {
                         <li><strong>Price Level:</strong> No price level / 5</li>
                     )}
                 </ul>
+                <img className="restaurantImage" src={currentRestaurant.photos} alt={currentRestaurant.name} />
+                </div>
+                <Link to='/restaurant-finder' className="button">Go To App</Link>
             </div>
+            
         </div>
     );
 }
