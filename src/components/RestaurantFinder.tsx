@@ -3,8 +3,8 @@ import GoogleMaps from './GoogleMaps';
 import Loader from '../loaders/Loader';
 
 const RestaurantFinder: React.FC = () => {
-  const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
   const [isLoading,setIsLoading] = useState(false)
+  const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
 
   const handleRestaurantsUpdate = (updatedRestaurants: google.maps.places.PlaceResult[]) => {
     setRestaurants(updatedRestaurants);
