@@ -19,7 +19,23 @@ const RestaurantFinder: React.FC = () => {
   };
 
   function navDetails(id:any){
-    navigation(`/restaurant-finder/details/${id}`)
+    const simplifiedRestaurants = restaurants.map(restaurant => ({
+      id: restaurant.place_id,
+      name: restaurant.name,
+      rating:restaurant.rating,
+      vicinity:restaurant.vicinity,
+      types : restaurant.types,
+      price_level : restaurant.price_level,
+      photos : restaurant.photos?.[0].html_attributions || null,
+      user_ratings_total : restaurant.user_ratings_total
+    }));
+      navigation(`/restaurant-finder/details/${id}`,{
+        state:{
+          allRestaurants: simplifiedRestaurants 
+        }
+      })
+    
+    
   }
   const renderRestaurants = () => {
     let displayedRestaurants: google.maps.places.PlaceResult[] = [];
@@ -32,7 +48,7 @@ const RestaurantFinder: React.FC = () => {
     } else if (viewIndex === 1) {
       displayedRestaurants = getHighestRatedRestaurants();
       return displayedRestaurants?.map((restaurant) => (
-        <li key={restaurant.place_id} onClick={() => navDetails(restaurant.place_id)}>{restaurant.name} - {restaurant.rating} /{restaurant.user_ratings_total}/</li>
+        <li key={restaurant.place_id} onClick={() => navDetails(restaurant.place_id)}>{restaurant.name} - {restaurant.rating}</li>
       ));
     }
 
