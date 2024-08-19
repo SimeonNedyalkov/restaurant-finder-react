@@ -6,7 +6,7 @@ const RestaurantFinder: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [restaurants, setRestaurants] = useState<google.maps.places.PlaceResult[]>([]);
   const [viewIndex, setViewIndex] = useState(0);
-
+  console.log(restaurants)
   const handleRestaurantsUpdate = (updatedRestaurants: google.maps.places.PlaceResult[]) => {
     setRestaurants(updatedRestaurants);
   };
@@ -26,7 +26,7 @@ const RestaurantFinder: React.FC = () => {
     } else if (viewIndex === 1) {
       displayedRestaurants = getHighestRatedRestaurants();
       return displayedRestaurants?.map((restaurant) => (
-        <li key={restaurant.place_id}>{restaurant.name} - {restaurant.rating}</li>
+        <li key={restaurant.place_id}>{restaurant.name} - {restaurant.rating} /{restaurant.user_ratings_total}/</li>
       ));
     }
 
