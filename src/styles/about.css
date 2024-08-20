@@ -9,10 +9,14 @@
   margin: 80px;
 }
 
+.aboutWrapper{
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
 .about-container {
   max-width: 800px;
   padding:90px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;

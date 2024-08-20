@@ -2,6 +2,7 @@ import sunsetImage from '../assets/about/0955556f6a7758813966092a6f561c08.jpg'
 
 export default function About() {
   return (
+    <div className='aboutWrapper'>
     <div className='aboutBackground'>
     <div className="about-container">
       <h1 className="about-title">Welcome to Varna Restaurant Finder</h1>
@@ -33,6 +34,7 @@ export default function About() {
       <p className="about-description">
         Thank you for choosing Restaurant Finder. We hope you enjoy using our app as much as we enjoyed building it.
       </p>
+    </div>
     </div>
     </div>
   );
