@@ -1,8 +1,8 @@
 /* Container and Background */
 .restaurantFinderBackground {
     background: linear-gradient(
-        rgba(44, 62, 80, 0.6), 
-        rgba(76, 161, 175, 0.6)
+        rgba(255, 179, 56, 0.3), 
+        rgba(252, 134, 44, 0.3)
     ), url('../assets/restaurant-finder/restaurant-background-sv84h1ctk850whke.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
@@ -23,7 +23,7 @@
     max-height: 80vh;
     overflow-y: auto;
     width: 100%;
-    max-width: 350px;
+    max-width: 450px;
     margin: 20px;
     right:200px;
     z-index: 5;
@@ -93,7 +93,7 @@
     right:200px;
     z-index: 0;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 /* Arrows */
